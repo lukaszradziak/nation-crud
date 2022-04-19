@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index')->name('index');
 
+Route::get('clients.csv', [ClientController::class, 'export'])->name('client.export');
 Route::resource('client', ClientController::class);

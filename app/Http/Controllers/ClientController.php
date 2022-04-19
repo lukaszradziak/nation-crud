@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreClientRequest;
 use App\Http\Requests\UpdateClientRequest;
 use App\Models\Client;
+use App\Exports\ClientsExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ClientController extends Controller
 {
@@ -86,5 +88,15 @@ class ClientController extends Controller
     {
         Client::find($id)->delete();
         return redirect()->route('client.index');
+    }
+
+    /**
+     * Export the resource.
+     *
+     * @return Maatwebsite\Excel\Facades\Excel;
+     */
+    public function export()
+    {
+        return Excel::download(new ClientsExport, 'clients.csv', \Maatwebsite\Excel\Excel::CSV);
     }
 }
