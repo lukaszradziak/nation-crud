@@ -77,6 +77,7 @@
                                                 method="post"
                                                 action="{{ route('client.destroy', $client) }}"
                                                 class="pt-2"
+                                                onsubmit="return confirm('{{ __('Are you sure?') }}')"
                                             >
                                                 @csrf
                                                 @method('DELETE')
