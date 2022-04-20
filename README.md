@@ -6,6 +6,8 @@ Simple CRUD App. Clients manager.
 
 `cp .env.example .env`
 
+`touch database/database.sqlite`
+
 `composer install`
 
 `php artisan key:generate`
