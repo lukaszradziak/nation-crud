@@ -2,6 +2,8 @@
 
 Simple CRUD App. Clients manager.
 
+![Laravel](https://github.com/lukaszradziak/nation-crud/workflows/Laravel/badge.svg)
+
 ## How to run
 
 `cp .env.example .env`
